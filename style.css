@@ -261,7 +261,8 @@ p {
 .stack-card,
 .interest-card,
 .project-card,
-.mindset-card {
+.mindset-card,
+.strength-card {
   background: var(--bg-elevated);
   border: 1px solid var(--line);
   border-radius: var(--radius);
@@ -316,9 +317,101 @@ p {
 }
 
 .project-grid,
-.mindset-grid {
+.mindset-grid,
+.strength-grid {
   display: grid;
   gap: 1rem;
+}
+
+.strength-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.strength-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.45rem 1.4rem 1.55rem;
+}
+
+.strength-kicker {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.strength-card h3 {
+  margin: 0.55rem 0 1.15rem;
+  font-family: var(--serif);
+  font-size: 1.22rem;
+  font-weight: 600;
+  line-height: 1.45;
+  letter-spacing: -0.02em;
+}
+
+.sar-list {
+  display: grid;
+  gap: 0.95rem;
+  margin: 0;
+  flex: 1;
+}
+
+.sar-item {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.sar-item dt {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.sar-item dd {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.sar-evidence {
+  margin-top: 0.2rem;
+  padding-top: 0.95rem;
+  border-top: 1px solid var(--line);
+}
+
+.sar-evidence dt {
+  color: var(--ink);
+}
+
+.evidence-links {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.evidence-links a {
+  display: inline-block;
+  width: fit-content;
+  color: var(--accent);
+  font-size: 0.9rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.evidence-links a:hover {
+  color: var(--ink);
+  border-bottom-color: var(--ink);
+}
+
+.evidence-links a[aria-disabled="true"] {
+  color: var(--muted);
+  border-bottom-style: dashed;
+  border-bottom-color: color-mix(in srgb, var(--muted) 55%, transparent);
+  cursor: default;
+  pointer-events: none;
 }
 
 .project-grid {
@@ -436,8 +529,13 @@ p {
 
   .stack-grid,
   .project-grid,
-  .mindset-grid {
+  .mindset-grid,
+  .strength-grid {
     grid-template-columns: 1fr;
+  }
+
+  .strength-grid {
+    gap: 0.9rem;
   }
 
   .footer-inner {
