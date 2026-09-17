@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="규칙을 탐구하고 스스로 만들어가며 몰입하는, 본질에 집중하는 웹 개발자 박현우의 소개 페이지입니다."
+    />
+    <title>박현우 — 본질에 집중하는 웹 개발자</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문으로 건너뛰기</a>
+
+    <header class="site-header">
+      <div class="shell header-inner">
+        <a class="brand" href="#top">박현우</a>
+        <div class="header-actions">
+          <nav class="nav" aria-label="섹션 이동">
+            <a href="#stack">기술</a>
+            <a href="#interest">관심</a>
+            <a href="#projects">프로젝트</a>
+            <a href="#mindset">일하는 방식</a>
+            <a href="#contact">연락</a>
+          </nav>
+          <button
+            class="theme-toggle"
+            type="button"
+            aria-label="라이트 모드로 전환"
+            data-theme-toggle
+          >
+            <span class="theme-toggle-label">Light</span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="shell">
+          <p class="eyebrow">박현우 · Web Developer · Full-stack</p>
+          <h1 id="hero-title">
+            규칙을 탐구하고<br />
+            스스로 만들어가며 몰입하는,<br />
+            <em>본질에 집중하는 사람</em>
+          </h1>
+          <p class="lede">
+            시스템의 규칙을 분석하고 다루는 것을 즐기며, 흥미를 가진 것을 직접
+            만들 때 가장 크게 몰입하는 웹 개발자입니다.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="stack" aria-labelledby="stack-title">
+        <div class="shell">
+          <header class="section-head">
+            <p class="section-index">01</p>
+            <div>
+              <h2 id="stack-title">Tech Stack</h2>
+              <p class="section-copy">
+                React, Vite, Next.js, Docker, Prisma, PostgreSQL, Supabase를
+                활용한 풀스택 웹 개발 경험.
+              </p>
+            </div>
+          </header>
+          <ul class="stack-grid" role="list">
+            <li class="stack-card">
+              <span class="stack-layer">Interface</span>
+              <strong>React</strong>
+              <span>컴포넌트 단위로 화면을 조립하고 상태를 다룹니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">Build</span>
+              <strong>Vite</strong>
+              <span>빠른 개발 서버와 명확한 번들 흐름을 기준으로 둡니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">App</span>
+              <strong>Next.js</strong>
+              <span>라우팅과 렌더링 경계를 의식하며 서비스를 구성합니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">Runtime</span>
+              <strong>Docker</strong>
+              <span>환경을 고정하고 실행 조건을 재현 가능하게 만듭니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">Data</span>
+              <strong>Prisma</strong>
+              <span>스키마를 코드로 다루며 데이터 규칙을 명시합니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">Store</span>
+              <strong>PostgreSQL</strong>
+              <span>관계형 구조를 바탕으로 데이터의 정합성을 지킵니다.</span>
+            </li>
+            <li class="stack-card">
+              <span class="stack-layer">Backend</span>
+              <strong>Supabase</strong>
+              <span>인증·데이터·API를 묶어 실제 서비스를 빠르게 올립니다.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section" id="interest" aria-labelledby="interest-title">
+        <div class="shell">
+          <header class="section-head">
+            <p class="section-index">02</p>
+            <div>
+              <h2 id="interest-title">Current Interest</h2>
+              <p class="section-copy">지금 시선을 두고 있는 층위.</p>
+            </div>
+          </header>
+          <article class="interest-card">
+            <p class="interest-kicker">Beyond the application layer</p>
+            <h3>네트워크 인프라와 통신 구조</h3>
+            <p>
+              최근에는 어플리케이션 계층을 넘어 네트워크 인프라와 통신 구조에
+              깊은 관심을 두고 공부하며 시야를 넓히고 있습니다. 화면과 데이터가
+              어떻게 오가는지, 그 규칙을 더 낮은 층위에서 이해하려는 중입니다.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" id="projects" aria-labelledby="projects-title">
+        <div class="shell">
+          <header class="section-head">
+            <p class="section-index">03</p>
+            <div>
+              <h2 id="projects-title">Projects</h2>
+              <p class="section-copy">흥미를 직접 구현으로 옮긴 작업.</p>
+            </div>
+          </header>
+          <div class="project-grid">
+            <article class="project-card">
+              <p class="project-meta">Team · Travel</p>
+              <h3>Tlan</h3>
+              <p>
+                4인이 함께 만든 해외 여행 계획 웹 서비스. 장소 탐색과 일정
+                조정을 한곳으로 모으고, 계획·공유·실시간 정보 확인이 끊기지
+                않도록 구성했습니다.
+              </p>
+              <ul>
+                <li>여행 계획 CRUD, 장소 검색 및 지도 연동</li>
+                <li>React · Vite 프론트엔드와 Spring Boot 백엔드</li>
+              </ul>
+              <a
+                class="project-link"
+                href="https://github.com/PPKK-Project/Tlan"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub에서 보기
+              </a>
+            </article>
+            <article class="project-card">
+              <p class="project-meta">Web · Encyclopedia</p>
+              <h3>Tarkov-hub</h3>
+              <p>
+                인터랙티브 무기 백과사전 웹 프로젝트. 이미지 URL과 디렉토리
+                구조를 최적화해, 콘텐츠가 많아져도 탐색과 로딩이 흐트러지지
+                않도록 구성했습니다.
+              </p>
+              <ul>
+                <li>무기 정보를 탐색 가능한 구조로 정리</li>
+                <li>이미지 URL 및 디렉토리 구조 최적화</li>
+              </ul>
+              <a
+                class="project-link"
+                href="https://github.com/nabell0/tarkov-hub"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GitHub에서 보기
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="mindset" aria-labelledby="mindset-title">
+        <div class="shell">
+          <header class="section-head">
+            <p class="section-index">04</p>
+            <div>
+              <h2 id="mindset-title">Work Style &amp; Mindset</h2>
+              <p class="section-copy">함께 일할 때 드러나는 방식.</p>
+            </div>
+          </header>
+          <ol class="mindset-grid">
+            <li class="mindset-card">
+              <span>01</span>
+              <h3>실전 압축형으로 만든다</h3>
+              <p>
+                코드를 작성할 때 큰 흐름을 먼저 구현하고, 발생하는 에러를
+                반복적으로 부딪히며 해결해 나가는 실전 압축형 개발 스타일입니다.
+              </p>
+            </li>
+            <li class="mindset-card">
+              <span>02</span>
+              <h3>집중해서 끝까지 판다</h3>
+              <p>
+                조용히 집중하여 문제를 끝까지 파고드는 시간을 중요하게
+                생각합니다. 소음보다 몰입, 속도보다 이해의 깊이를 택합니다.
+              </p>
+            </li>
+            <li class="mindset-card">
+              <span>03</span>
+              <h3>근거 있는 대화를 지향한다</h3>
+              <p>
+                논리적으로 납득이 되는 피드백을 환영하며, 상호 존중과 타당한
+                근거를 바탕으로 한 소통을 지향합니다.
+              </p>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="contact">
+      <div class="shell footer-inner">
+        <div>
+          <p>박현우 · 본질에 집중하는 웹 개발자</p>
+          <p class="footer-note">규칙은 읽고, 만들고, 다시 다듬는 대상입니다.</p>
+        </div>
+        <a class="contact-mail" href="mailto:pmy738170@gmail.com">pmy738170@gmail.com</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
