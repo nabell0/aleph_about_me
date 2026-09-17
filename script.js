@@ -74,12 +74,19 @@ if (sections.length > 0 && navLinks.length > 0) {
 }
 
 const openModalTriggers = [...document.querySelectorAll("[data-modal-open]")];
+let lastModalTrigger = null;
 
-const openStrengthModal = (modalId) => {
+const openStrengthModal = (modalId, trigger) => {
   const dialog = document.getElementById(modalId);
   if (!(dialog instanceof HTMLDialogElement)) return;
-  if (typeof dialog.showModal === "function") {
-    dialog.showModal();
+  if (typeof dialog.showModal !== "function") return;
+
+  lastModalTrigger = trigger ?? null;
+  dialog.showModal();
+
+  const closeButton = dialog.querySelector("[data-modal-close]");
+  if (closeButton instanceof HTMLElement) {
+    closeButton.focus();
   }
 };
 
@@ -88,31 +95,48 @@ const closeStrengthModal = (dialog) => {
   if (typeof dialog.close === "function") {
     dialog.close();
   }
+
+  if (lastModalTrigger instanceof HTMLElement) {
+    lastModalTrigger.focus();
+    lastModalTrigger = null;
+  }
 };
+
+const isActivateKey = (event) =>
+  event.key === "Enter" || event.key === " " || event.key === "Spacebar";
 
 openModalTriggers.forEach((trigger) => {
   const modalId = trigger.getAttribute("data-modal-open");
   if (!modalId) return;
 
-  const open = () => openStrengthModal(modalId);
+  const open = () => openStrengthModal(modalId, trigger);
 
   trigger.addEventListener("click", open);
   trigger.addEventListener("keydown", (event) => {
-    if (event.key === "Enter" || event.key === " ") {
-      event.preventDefault();
-      open();
-    }
+    if (!isActivateKey(event)) return;
+    event.preventDefault();
+    open();
   });
 });
 
 document.querySelectorAll("dialog.strength-modal").forEach((dialog) => {
   dialog.querySelectorAll("[data-modal-close]").forEach((button) => {
     button.addEventListener("click", () => closeStrengthModal(dialog));
+    button.addEventListener("keydown", (event) => {
+      if (!isActivateKey(event)) return;
+      event.preventDefault();
+      closeStrengthModal(dialog);
+    });
   });
 
   dialog.addEventListener("click", (event) => {
     if (event.target === dialog) {
       closeStrengthModal(dialog);
     }
+  });
+
+  dialog.addEventListener("cancel", (event) => {
+    event.preventDefault();
+    closeStrengthModal(dialog);
   });
 });
