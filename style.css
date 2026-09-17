@@ -212,8 +212,8 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* —— Above the fold —— */
-.above-fold {
+/* —— Page layout: hero + content rail —— */
+.page-layout {
   display: grid;
   gap: 1.25rem;
   padding-block: 1.35rem 1.5rem;
@@ -258,15 +258,17 @@ button:focus-visible {
   line-height: 1.55;
 }
 
-.strengths-panel {
+.content-rail {
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.section--strengths {
   scroll-margin-top: var(--header-h);
 }
 
-.strengths-panel .section-head {
-  display: grid;
-  grid-template-columns: 2.5rem 1fr;
-  gap: 0.65rem;
+.section--strengths .section-head {
   margin-bottom: 0.85rem;
 }
 
@@ -274,6 +276,11 @@ button:focus-visible {
   padding: clamp(2.4rem, 6vh, 4.25rem) 0;
   border-top: 1px solid var(--line);
   scroll-margin-top: calc(var(--header-h) + 0.5rem);
+}
+
+.section--strengths.section {
+  border-top: 0;
+  padding-top: 0;
 }
 
 .section-head {
@@ -289,8 +296,7 @@ button:focus-visible {
   letter-spacing: 0.14em;
 }
 
-.section-head h2,
-.strengths-panel .section-head h2 {
+.section-head h2 {
   font-family: var(--serif);
   font-size: clamp(1.35rem, 2.5vw, 1.75rem);
   font-weight: 600;
@@ -612,26 +618,28 @@ button:focus-visible {
   margin-top: 0;
 }
 
-/* Desktop above-the-fold: hero left, 3 strength cards right */
+/* Desktop: sticky hero left, scrolling content rail right */
 @media (min-width: 1024px) {
-  .above-fold {
-    grid-template-columns: minmax(240px, 0.78fr) minmax(0, 1.62fr);
+  .page-layout {
+    grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.58fr);
     column-gap: 1.15rem;
     row-gap: 0;
-    align-items: stretch;
-    height: calc(100svh - var(--header-h));
-    max-height: calc(100svh - var(--header-h));
-    min-height: 0;
-    box-sizing: border-box;
-    padding-block: 0.5rem;
-    overflow: hidden;
+    align-items: start;
+    padding-block: 0 2rem;
   }
 
   .hero {
+    position: sticky;
+    top: var(--header-h);
+    z-index: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-self: start;
+    height: calc(100svh - var(--header-h));
+    max-height: calc(100svh - var(--header-h));
     padding-inline-end: 0.35rem;
+    box-sizing: border-box;
   }
 
   .eyebrow {
@@ -652,117 +660,123 @@ button:focus-visible {
     max-width: none;
   }
 
-  .strengths-panel {
+  .content-rail {
+    min-width: 0;
+  }
+
+  /* First content block fills the initial viewport beside sticky hero */
+  .section--strengths.section {
     display: flex;
     flex-direction: column;
-    height: 100%;
-    min-height: 0;
+    justify-content: center;
+    box-sizing: border-box;
+    min-height: calc(100svh - var(--header-h));
+    max-height: calc(100svh - var(--header-h));
+    padding: 0.5rem 0 0.65rem;
     overflow: hidden;
   }
 
-  .strengths-panel .section-head {
+  .section--strengths .section-head {
     grid-template-columns: 1.75rem 1fr;
     gap: 0.4rem;
     margin-bottom: 0.4rem;
     flex-shrink: 0;
   }
 
-  .strengths-panel .section-index {
+  .section--strengths .section-index {
     font-size: 0.68rem;
   }
 
-  .strengths-panel .section-head h2 {
+  .section--strengths .section-head h2 {
     font-size: clamp(1.05rem, 1.35vw, 1.25rem);
   }
 
-  .strengths-panel .section-copy {
+  .section--strengths .section-copy {
     margin-top: 0.15rem;
     font-size: 0.74rem;
     line-height: 1.35;
   }
 
-  .strength-grid {
+  .section--strengths .strength-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.5rem;
     flex: 1 1 auto;
     min-height: 0;
-    height: 100%;
   }
 
-  .strength-card {
+  .section--strengths .strength-card {
     padding: 0.55rem 0.6rem 0.6rem;
     border-radius: 12px;
-    overflow: visible;
   }
 
-  .strength-kicker {
+  .section--strengths .strength-kicker {
     font-size: 0.6rem;
   }
 
-  .strength-card h3 {
+  .section--strengths .strength-card h3 {
     margin: 0.2rem 0 0.4rem;
     font-size: 0.88rem;
     line-height: 1.28;
   }
 
-  .sar-list {
+  .section--strengths .sar-list {
     gap: 0.3rem;
   }
 
-  .sar-item {
+  .section--strengths .sar-item {
     gap: 0.08rem;
   }
 
-  .sar-item dt {
+  .section--strengths .sar-item dt {
     font-size: 0.58rem;
     letter-spacing: 0.08em;
   }
 
-  .sar-item dd {
+  .section--strengths .sar-item dd {
     font-size: 0.7rem;
     line-height: 1.32;
   }
 
-  .sar-evidence {
+  .section--strengths .sar-evidence {
     margin-top: 0.05rem;
     padding-top: 0.3rem;
   }
 
-  .evidence-figure {
+  .section--strengths .evidence-figure {
     margin: 0 0 0.3rem;
   }
 
-  .evidence-figure figcaption {
+  .section--strengths .evidence-figure figcaption {
     display: none;
   }
 
-  .evidence-figure a {
+  .section--strengths .evidence-figure a {
     border-radius: 7px;
   }
 
-  .evidence-figure img {
+  .section--strengths .evidence-figure img {
     max-height: 44px;
     object-fit: cover;
     object-position: left center;
   }
 
-  .evidence-links {
+  .section--strengths .evidence-links {
     gap: 0.15rem;
   }
 
-  .evidence-links a {
+  .section--strengths .evidence-links a {
     font-size: 0.68rem;
   }
 }
 
-/* Short desktop viewports (e.g. 1366x768): push density harder */
+/* Short desktop viewports (e.g. 1366x768): keep fold density tight */
 @media (min-width: 1024px) and (max-height: 820px) {
   :root {
     --header-h: 2.85rem;
   }
 
-  .above-fold {
-    padding-block: 0.4rem 0.45rem;
+  .page-layout {
+    padding-block: 0 1.5rem;
     column-gap: 0.85rem;
   }
 
@@ -782,45 +796,49 @@ button:focus-visible {
     line-height: 1.38;
   }
 
-  .strengths-panel .section-head {
+  .section--strengths.section {
+    padding: 0.35rem 0 0.4rem;
+  }
+
+  .section--strengths .section-head {
     margin-bottom: 0.3rem;
   }
 
-  .strengths-panel .section-head h2 {
+  .section--strengths .section-head h2 {
     font-size: 1rem;
   }
 
-  .strengths-panel .section-copy {
+  .section--strengths .section-copy {
     font-size: 0.68rem;
   }
 
-  .strength-grid {
+  .section--strengths .strength-grid {
     gap: 0.4rem;
   }
 
-  .strength-card {
+  .section--strengths .strength-card {
     padding: 0.42rem 0.5rem 0.48rem;
   }
 
-  .strength-card h3 {
+  .section--strengths .strength-card h3 {
     margin: 0.12rem 0 0.28rem;
     font-size: 0.8rem;
   }
 
-  .sar-list {
+  .section--strengths .sar-list {
     gap: 0.22rem;
   }
 
-  .sar-item dd {
+  .section--strengths .sar-item dd {
     font-size: 0.64rem;
     line-height: 1.28;
   }
 
-  .evidence-figure img {
+  .section--strengths .evidence-figure img {
     max-height: 34px;
   }
 
-  .evidence-links a {
+  .section--strengths .evidence-links a {
     font-size: 0.62rem;
   }
 }
@@ -828,6 +846,10 @@ button:focus-visible {
 @media (max-width: 1023px) {
   .strength-grid {
     grid-template-columns: 1fr;
+  }
+
+  .section--strengths.section {
+    padding-top: 0.25rem;
   }
 }
 
