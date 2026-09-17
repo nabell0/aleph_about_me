@@ -72,3 +72,47 @@ if (sections.length > 0 && navLinks.length > 0) {
 
   sections.forEach((section) => observer.observe(section));
 }
+
+const openModalTriggers = [...document.querySelectorAll("[data-modal-open]")];
+
+const openStrengthModal = (modalId) => {
+  const dialog = document.getElementById(modalId);
+  if (!(dialog instanceof HTMLDialogElement)) return;
+  if (typeof dialog.showModal === "function") {
+    dialog.showModal();
+  }
+};
+
+const closeStrengthModal = (dialog) => {
+  if (!(dialog instanceof HTMLDialogElement)) return;
+  if (typeof dialog.close === "function") {
+    dialog.close();
+  }
+};
+
+openModalTriggers.forEach((trigger) => {
+  const modalId = trigger.getAttribute("data-modal-open");
+  if (!modalId) return;
+
+  const open = () => openStrengthModal(modalId);
+
+  trigger.addEventListener("click", open);
+  trigger.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      open();
+    }
+  });
+});
+
+document.querySelectorAll("dialog.strength-modal").forEach((dialog) => {
+  dialog.querySelectorAll("[data-modal-close]").forEach((button) => {
+    button.addEventListener("click", () => closeStrengthModal(dialog));
+  });
+
+  dialog.addEventListener("click", (event) => {
+    if (event.target === dialog) {
+      closeStrengthModal(dialog);
+    }
+  });
+});

@@ -74,191 +74,44 @@
                     </div>
                   </header>
                   <div class="strength-grid">
-                    <details class="strength-card">
-                      <summary class="strength-summary">
-                        <span class="strength-summary-text">
-                          <span class="strength-kicker">System thinking</span>
-                          <span class="strength-title">시스템과 규칙 분석</span>
-                        </span>
-                      </summary>
-                      <dl class="sar-list">
-                        <div class="sar-item">
-                          <dt>상황</dt>
-                          <dd>
-                            해외 여행 계획 웹 서비스(Tlan)에서 여행 일정, 장소, 공유
-                            권한, 채팅까지 포함한 데이터베이스를 설계해야 했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>행동</dt>
-                          <dd>
-                            사용자·여행·국가·장소 도메인의 작동 규칙을 분석하고,
-                            Mermaid ERD로 복잡한 테이블 관계를 시각적으로
-                            구조화했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>결과</dt>
-                          <dd>
-                            일정·권한·커뮤니티 기능을 아우르는 확장 가능한 관계형
-                            데이터베이스 스키마를 구축했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item sar-evidence">
-                          <dt>근거</dt>
-                          <dd>
-                            <figure class="evidence-figure">
-                              <a
-                                href="assets/tlan-erd.jpg"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                aria-label="Tlan ERD 다이어그램 원본 이미지 새 탭에서 보기"
-                              >
-                                <picture>
-                                  <source
-                                    srcset="assets/tlan-erd.webp"
-                                    type="image/webp"
-                                  />
-                                  <img
-                                    src="assets/tlan-erd.jpg"
-                                    alt="여행 계획 서비스 데이터베이스 ERD 다이어그램"
-                                    width="1600"
-                                    height="509"
-                                    loading="lazy"
-                                  />
-                                </picture>
-                              </a>
-                              <figcaption>Tlan ERD 산출물 · 클릭하면 확대</figcaption>
-                            </figure>
-                            <ul class="evidence-links">
-                              <li>
-                                <a
-                                  href="https://github.com/PPKK-Project/Tlan"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  GitHub Repository (Tlan)
-                                </a>
-                              </li>
-                            </ul>
-                          </dd>
-                        </div>
-                      </dl>
-                    </details>
+                    <article
+                      class="strength-card"
+                      role="button"
+                      tabindex="0"
+                      data-modal-open="strength-modal-system"
+                      aria-haspopup="dialog"
+                      aria-controls="strength-modal-system"
+                    >
+                      <p class="strength-kicker">System thinking</p>
+                      <h3 class="strength-title">시스템과 규칙 분석</h3>
+                      <span class="strength-cta">자세히 보기 ➔</span>
+                    </article>
 
-                    <details class="strength-card">
-                      <summary class="strength-summary">
-                        <span class="strength-summary-text">
-                          <span class="strength-kicker">Rapid execution</span>
-                          <span class="strength-title">빠른 실행과 실전 압축형 문제 해결</span>
-                        </span>
-                      </summary>
-                      <dl class="sar-list">
-                        <div class="sar-item">
-                          <dt>상황</dt>
-                          <dd>
-                            Next.js와 Docker를 활용한 웹 프로젝트(Tarkov-hub) 개발 중
-                            복잡한 환경 설정과 렌더링 에러에 직면했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>행동</dt>
-                          <dd>
-                            큰 흐름을 먼저 코드로 구현한 뒤, 발생하는 에러에 반복적으로
-                            부딪히며 원인을 파악하고 즉각 수정했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>결과</dt>
-                          <dd>
-                            디렉토리 구조를 최적화하고 안정적인 애플리케이션 배포를
-                            달성했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item sar-evidence">
-                          <dt>근거</dt>
-                          <dd>
-                            <ul class="evidence-links">
-                              <li>
-                                <a
-                                  href="https://github.com/nabell0/tarkov-hub"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  Tarkov-hub GitHub
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="https://app.notion.com/p/Tarkov-Hub-1-33382a75fe07808b878ff3ea90bfe16c?source=copy_link"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  트러블슈팅 기술 블로그 (Notion)
-                                </a>
-                              </li>
-                            </ul>
-                          </dd>
-                        </div>
-                      </dl>
-                    </details>
+                    <article
+                      class="strength-card"
+                      role="button"
+                      tabindex="0"
+                      data-modal-open="strength-modal-execution"
+                      aria-haspopup="dialog"
+                      aria-controls="strength-modal-execution"
+                    >
+                      <p class="strength-kicker">Rapid execution</p>
+                      <h3 class="strength-title">빠른 실행과 실전 압축형 문제 해결</h3>
+                      <span class="strength-cta">자세히 보기 ➔</span>
+                    </article>
 
-                    <details class="strength-card">
-                      <summary class="strength-summary">
-                        <span class="strength-summary-text">
-                          <span class="strength-kicker">Depth &amp; breadth</span>
-                          <span class="strength-title">본질에 대한 탐구와 시야 확장</span>
-                        </span>
-                      </summary>
-                      <dl class="sar-list">
-                        <div class="sar-item">
-                          <dt>상황</dt>
-                          <dd>
-                            애플리케이션 계층을 넘어, 데이터가 오가는 기반 구조에 대한
-                            근본적인 이해가 필요하다고 느꼈습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>행동</dt>
-                          <dd>
-                            조용히 집중하는 시간을 확보해 통신 구조와 네트워크 인프라
-                            작동 방식을 깊이 파고들어 학습했습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item">
-                          <dt>결과</dt>
-                          <dd>
-                            단순 기능 구현을 넘어, 웹 생태계 전반을 아우르는 풀스택
-                            개발자로서의 시야를 넓혔습니다.
-                          </dd>
-                        </div>
-                        <div class="sar-item sar-evidence">
-                          <dt>근거</dt>
-                          <dd>
-                            <ul class="evidence-links">
-                              <li>
-                                <a
-                                  href="https://github.com/nabell0"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  GitHub 커밋 기록
-                                </a>
-                              </li>
-                              <li>
-                                <a
-                                  href="https://app.notion.com/p/3de82a75fe0780ae9a60ea38a7353350?source=copy_link"
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                >
-                                  공개 학습 노트
-                                </a>
-                              </li>
-                            </ul>
-                          </dd>
-                        </div>
-                      </dl>
-                    </details>
+                    <article
+                      class="strength-card"
+                      role="button"
+                      tabindex="0"
+                      data-modal-open="strength-modal-depth"
+                      aria-haspopup="dialog"
+                      aria-controls="strength-modal-depth"
+                    >
+                      <p class="strength-kicker">Depth &amp; breadth</p>
+                      <h3 class="strength-title">본질에 대한 탐구와 시야 확장</h3>
+                      <span class="strength-cta">자세히 보기 ➔</span>
+                    </article>
                   </div>
                   </section>
 
@@ -421,6 +274,235 @@
                   </ol>
                   </section>
       </div>
+
+      <dialog
+        class="strength-modal"
+        id="strength-modal-system"
+        aria-labelledby="strength-modal-system-title"
+      >
+        <div class="strength-modal-panel">
+          <header class="strength-modal-head">
+            <div>
+              <p class="strength-kicker">System thinking</p>
+              <h3 id="strength-modal-system-title">시스템과 규칙 분석</h3>
+            </div>
+            <button
+              class="strength-modal-close"
+              type="button"
+              data-modal-close
+              aria-label="모달 닫기"
+            >
+              ×
+            </button>
+          </header>
+          <dl class="sar-list">
+            <div class="sar-item">
+              <dt>상황</dt>
+              <dd>
+                해외 여행 계획 웹 서비스(Tlan)에서 여행 일정, 장소, 공유
+                권한, 채팅까지 포함한 데이터베이스를 설계해야 했습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>행동</dt>
+              <dd>
+                사용자·여행·국가·장소 도메인의 작동 규칙을 분석하고,
+                Mermaid ERD로 복잡한 테이블 관계를 시각적으로
+                구조화했습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>결과</dt>
+              <dd>
+                일정·권한·커뮤니티 기능을 아우르는 확장 가능한 관계형
+                데이터베이스 스키마를 구축했습니다.
+              </dd>
+            </div>
+            <div class="sar-item sar-evidence">
+              <dt>근거</dt>
+              <dd>
+                <figure class="evidence-figure">
+                  <a
+                    href="assets/tlan-erd.jpg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Tlan ERD 다이어그램 원본 이미지 새 탭에서 보기"
+                  >
+                    <picture>
+                      <source
+                        srcset="assets/tlan-erd.webp"
+                        type="image/webp"
+                      />
+                      <img
+                        src="assets/tlan-erd.jpg"
+                        alt="여행 계획 서비스 데이터베이스 ERD 다이어그램"
+                        width="1600"
+                        height="509"
+                        loading="lazy"
+                      />
+                    </picture>
+                  </a>
+                  <figcaption>Tlan ERD 산출물 · 클릭하면 확대</figcaption>
+                </figure>
+                <ul class="evidence-links">
+                  <li>
+                    <a
+                      href="https://github.com/PPKK-Project/Tlan"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub Repository (Tlan)
+                    </a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </dialog>
+
+      <dialog
+        class="strength-modal"
+        id="strength-modal-execution"
+        aria-labelledby="strength-modal-execution-title"
+      >
+        <div class="strength-modal-panel">
+          <header class="strength-modal-head">
+            <div>
+              <p class="strength-kicker">Rapid execution</p>
+              <h3 id="strength-modal-execution-title">빠른 실행과 실전 압축형 문제 해결</h3>
+            </div>
+            <button
+              class="strength-modal-close"
+              type="button"
+              data-modal-close
+              aria-label="모달 닫기"
+            >
+              ×
+            </button>
+          </header>
+          <dl class="sar-list">
+            <div class="sar-item">
+              <dt>상황</dt>
+              <dd>
+                Next.js와 Docker를 활용한 웹 프로젝트(Tarkov-hub) 개발 중
+                복잡한 환경 설정과 렌더링 에러에 직면했습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>행동</dt>
+              <dd>
+                큰 흐름을 먼저 코드로 구현한 뒤, 발생하는 에러에 반복적으로
+                부딪히며 원인을 파악하고 즉각 수정했습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>결과</dt>
+              <dd>
+                디렉토리 구조를 최적화하고 안정적인 애플리케이션 배포를
+                달성했습니다.
+              </dd>
+            </div>
+            <div class="sar-item sar-evidence">
+              <dt>근거</dt>
+              <dd>
+                <ul class="evidence-links">
+                  <li>
+                    <a
+                      href="https://github.com/nabell0/tarkov-hub"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Tarkov-hub GitHub
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://app.notion.com/p/Tarkov-Hub-1-33382a75fe07808b878ff3ea90bfe16c?source=copy_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      트러블슈팅 기술 블로그 (Notion)
+                    </a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </dialog>
+
+      <dialog
+        class="strength-modal"
+        id="strength-modal-depth"
+        aria-labelledby="strength-modal-depth-title"
+      >
+        <div class="strength-modal-panel">
+          <header class="strength-modal-head">
+            <div>
+              <p class="strength-kicker">Depth &amp; breadth</p>
+              <h3 id="strength-modal-depth-title">본질에 대한 탐구와 시야 확장</h3>
+            </div>
+            <button
+              class="strength-modal-close"
+              type="button"
+              data-modal-close
+              aria-label="모달 닫기"
+            >
+              ×
+            </button>
+          </header>
+          <dl class="sar-list">
+            <div class="sar-item">
+              <dt>상황</dt>
+              <dd>
+                애플리케이션 계층을 넘어, 데이터가 오가는 기반 구조에 대한
+                근본적인 이해가 필요하다고 느꼈습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>행동</dt>
+              <dd>
+                조용히 집중하는 시간을 확보해 통신 구조와 네트워크 인프라
+                작동 방식을 깊이 파고들어 학습했습니다.
+              </dd>
+            </div>
+            <div class="sar-item">
+              <dt>결과</dt>
+              <dd>
+                단순 기능 구현을 넘어, 웹 생태계 전반을 아우르는 풀스택
+                개발자로서의 시야를 넓혔습니다.
+              </dd>
+            </div>
+            <div class="sar-item sar-evidence">
+              <dt>근거</dt>
+              <dd>
+                <ul class="evidence-links">
+                  <li>
+                    <a
+                      href="https://github.com/nabell0"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub 커밋 기록
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://app.notion.com/p/3de82a75fe0780ae9a60ea38a7353350?source=copy_link"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      공개 학습 노트
+                    </a>
+                  </li>
+                </ul>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </dialog>
+
     </main>
 
     <footer class="site-footer" id="contact">
