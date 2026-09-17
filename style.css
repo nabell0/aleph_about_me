@@ -388,6 +388,41 @@ p {
   color: var(--ink);
 }
 
+.evidence-figure {
+  margin: 0 0 0.85rem;
+}
+
+.evidence-figure a {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #0d0d0c;
+}
+
+[data-theme="light"] .evidence-figure a {
+  background: #1a1916;
+}
+
+.evidence-figure img {
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  transition: transform 0.35s ease;
+}
+
+.evidence-figure a:hover img,
+.evidence-figure a:focus-visible img {
+  transform: scale(1.03);
+}
+
+.evidence-figure figcaption {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: -0.01em;
+}
+
 .evidence-links {
   display: grid;
   gap: 0.45rem;
