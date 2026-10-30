@@ -34,6 +34,7 @@
             <a href="#interest">관심</a>
             <a href="#projects">프로젝트</a>
             <a href="#mindset">일하는 방식</a>
+            <a href="#private">비공개</a>
             <a href="#contact">연락</a>
           </nav>
           <button
@@ -273,6 +274,132 @@
                     </li>
                   </ol>
                   </section>
+
+        <section
+          class="section section--private"
+          id="private"
+          aria-labelledby="private-title"
+          data-private-section
+        >
+          <header class="section-head">
+            <p class="section-index">06</p>
+            <div>
+              <h2 id="private-title" class="private-title">
+                <span class="private-lock" aria-hidden="true">
+                  <svg
+                    width="22"
+                    height="22"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M7 10V8a5 5 0 0 1 10 0v2"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                    />
+                    <rect
+                      x="5"
+                      y="10"
+                      width="14"
+                      height="11"
+                      rx="2.5"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                    />
+                    <circle cx="12" cy="15.5" r="1.35" fill="currentColor" />
+                  </svg>
+                </span>
+                비공개 영역
+                <span class="private-title-note">(나만 보기)</span>
+              </h2>
+              <p class="section-copy">
+                인증된 소유자만 서버에서 불러올 수 있습니다. 내용은 페이지 소스에
+                포함되지 않습니다.
+              </p>
+            </div>
+          </header>
+
+          <div
+            class="private-gate"
+            data-private-gate
+            aria-live="polite"
+          >
+            <p class="private-status" data-private-status>
+              잠금 상태입니다. 패스키로 로그인한 뒤에만 비공개 데이터를 요청합니다.
+            </p>
+            <form class="private-auth-form" data-private-auth-form>
+              <label class="private-field">
+                <span>이메일</span>
+                <input
+                  type="email"
+                  name="email"
+                  autocomplete="username webauthn"
+                  required
+                  placeholder="you@example.com"
+                />
+              </label>
+              <div class="private-auth-actions">
+                <button type="submit" class="private-btn private-btn--primary">
+                  패스키로 잠금 해제
+                </button>
+                <button
+                  type="button"
+                  class="private-btn"
+                  data-private-probe
+                >
+                  비로그인 요청 테스트
+                </button>
+              </div>
+            </form>
+            <p class="private-error" data-private-error hidden></p>
+          </div>
+
+          <!-- 비공개 본문은 서버 응답 후에만 JS가 DOM으로 추가합니다. -->
+          <div
+            class="private-content"
+            data-private-content
+            hidden
+          ></div>
+
+          <div class="private-session" data-private-session hidden>
+            <p class="private-session-label" data-private-session-label></p>
+            <div class="private-session-actions">
+              <button type="button" class="private-btn" data-private-sign-out>
+                로그아웃
+              </button>
+            </div>
+          </div>
+
+          <div
+            class="passkey-panel"
+            data-passkey-panel
+            hidden
+          >
+            <div class="passkey-panel-head">
+              <h3 class="passkey-panel-title">내 패스키 관리</h3>
+              <button
+                type="button"
+                class="private-btn private-btn--primary"
+                data-passkey-register
+              >
+                새 패스키 등록
+              </button>
+            </div>
+            <ul class="passkey-list" data-passkey-list></ul>
+            <p
+              class="passkey-empty-warning"
+              data-passkey-empty-warning
+              hidden
+            >
+              등록된 패스키가 없습니다. 계정 복구 수단이 없다면 이 계정으로는
+              영구적으로 로그인할 수 없습니다. 가능한 한 빨리 «새 패스키 등록»으로
+              백업 기기를 추가하세요.
+            </p>
+            <p class="private-status" data-passkey-status></p>
+          </div>
+        </section>
       </div>
 
       <dialog
@@ -515,6 +642,9 @@
       </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser@11.0.0/dist/bundle/index.umd.min.js"></script>
+    <script src="supabase-config.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

@@ -1,0 +1,15 @@
+# supabase functions serve / deploy 용 최소 설정
+# WEBAUTHN_RP_ID, WEBAUTHN_ORIGIN 은 Dashboard → Edge Functions → Secrets 에 넣으세요.
+# 로컬 예: WEBAUTHN_RP_ID=localhost  WEBAUTHN_ORIGIN=http://localhost:5500
+
+[functions.webauthn-register-options]
+verify_jwt = true
+
+[functions.webauthn-register-verify]
+verify_jwt = true
+
+[functions.webauthn-login-options]
+verify_jwt = false
+
+[functions.webauthn-login-verify]
+verify_jwt = false

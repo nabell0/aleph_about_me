@@ -743,6 +743,262 @@ button:focus-visible {
   margin-top: 0;
 }
 
+/* —— Private area (shell only; body filled after auth) —— */
+.private-title {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.55rem;
+}
+
+.private-lock {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+.private-title-note {
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.72em;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.private-gate {
+  display: grid;
+  gap: 1rem;
+  max-width: 28rem;
+  padding: 1.15rem 1.2rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+}
+
+.private-status {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.private-auth-form {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.private-field {
+  display: grid;
+  gap: 0.35rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+
+.private-field input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.92rem;
+  letter-spacing: 0;
+}
+
+.private-auth-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 0.15rem;
+}
+
+.private-btn {
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+.private-btn:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}
+
+.private-btn--primary {
+  color: var(--bg);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.private-btn--primary:hover {
+  color: var(--bg);
+  filter: brightness(1.05);
+}
+
+.private-error {
+  margin: 0;
+  color: #c45c5c;
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+[data-theme="light"] .private-error {
+  color: #9b2c2c;
+}
+
+.private-content {
+  margin-top: 1.25rem;
+}
+
+.private-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.private-card {
+  display: grid;
+  gap: 0.45rem;
+  min-width: 0;
+  padding: 1rem 1.05rem 1.15rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.private-kicker {
+  color: var(--accent);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.private-card h3 {
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.private-body {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+
+.private-session {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--line);
+}
+
+.private-session-label {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.private-session-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.passkey-panel {
+  margin-top: 1.25rem;
+  padding: 1rem 1.05rem 1.15rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.passkey-panel-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.65rem;
+  margin-bottom: 0.75rem;
+}
+
+.passkey-panel-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.passkey-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.passkey-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem 0.75rem;
+  padding: 0.55rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.passkey-list-meta {
+  display: grid;
+  gap: 0.15rem;
+  min-width: 0;
+}
+
+.passkey-list strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.passkey-list-date {
+  font-size: 0.78rem;
+}
+
+.private-btn--danger {
+  color: #c45c5c;
+  border-color: color-mix(in srgb, #c45c5c 45%, var(--line));
+}
+
+.private-btn--danger:hover {
+  color: #e07070;
+  border-color: #c45c5c;
+}
+
+[data-theme="light"] .private-btn--danger {
+  color: #9b2c2c;
+}
+
+.passkey-empty-warning {
+  margin: 0.75rem 0 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px dashed color-mix(in srgb, #c45c5c 50%, var(--line));
+  border-radius: 10px;
+  color: #c45c5c;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+[data-theme="light"] .passkey-empty-warning {
+  color: #9b2c2c;
+}
+
 /* Desktop: compact fold + 3-column strength cards */
 @media (min-width: 1024px) {
   .page-shell {
@@ -915,7 +1171,8 @@ button:focus-visible {
 
   .stack-grid,
   .project-grid,
-  .mindset-grid {
+  .mindset-grid,
+  .private-grid {
     grid-template-columns: 1fr;
   }
 
